@@ -9,6 +9,7 @@
 Color.create(name: 'Red')
 Color.create(name: 'Blue')
 Color.create(name: 'Green')
+Color.create(name: 'Neutral')
 
 WeaponType.create(name: 'Lance')
 WeaponType.create(name: 'Sword')
@@ -23,3 +24,5 @@ MovementType.create(name: 'Cavalry')
 MovementType.create(name: 'Infantry')
 MovementType.create(name: 'Flying')
 MovementType.create(name: 'Armored')
+
+Importers::HeroImporter.new.import
