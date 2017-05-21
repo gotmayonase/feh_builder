@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  sp_cost: 1
+  damage: 1
+  range: 1
+  effect: MyString
+  exclusive: false
+
+two:
+  name: MyString
+  sp_cost: 1
+  damage: 1
+  range: 1
+  effect: MyString
+  exclusive: false

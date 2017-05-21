@@ -3,5 +3,23 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#   movies = Movie.create(name: [{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   Character.create(name: name: 'Luke', movie: movies.first)
+
+Color.create(name: 'Red')
+Color.create(name: 'Blue')
+Color.create(name: 'Green')
+
+WeaponType.create(name: 'Lance')
+WeaponType.create(name: 'Sword')
+WeaponType.create(name: 'Axe')
+WeaponType.create(name: 'Tome')
+WeaponType.create(name: 'Breath')
+WeaponType.create(name: 'Staff')
+WeaponType.create(name: 'Bow')
+WeaponType.create(name: 'Dagger')
+
+MovementType.create(name: 'Cavalry')
+MovementType.create(name: 'Infantry')
+MovementType.create(name: 'Flying')
+MovementType.create(name: 'Armored')

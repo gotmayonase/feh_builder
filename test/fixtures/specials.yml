@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  sp_cost: 1
+  cooldown: 1
+  effect: MyText
+  inherit_restriction: MyString
+
+two:
+  name: MyString
+  sp_cost: 1
+  cooldown: 1
+  effect: MyText
+  inherit_restriction: MyString

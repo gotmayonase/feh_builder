@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  slot: MyString
+  name: MyString
+  sp_cost: 1
+  effect: MyText
+  inherit_restriction: MyString
+
+two:
+  slot: MyString
+  name: MyString
+  sp_cost: 1
+  effect: MyText
+  inherit_restriction: MyString
