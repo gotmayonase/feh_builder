@@ -1,32 +1,54 @@
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th>Name</th>
-      <th>Class</th>
-      <th>Movement</th>
-      <th>Weapon</th>
-      <th>Assist</th>
-      <th>Special</th>
-      <th>Passive (A)</th>
-      <th>Passive (B)</th>
-      <th>Passive (C)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @heroes.each do |hero| %>
-    <tr>
-      <td><%= image_tag hero.image.url %></td>
-      <td><%= hero.name %></td>
-      <td><%= hero.color.name %> <%= hero.weapon_type.name %></td>
-      <td><%= hero.movement_type.name %></td>
-      <td><%= hero.weapon.try(:name) %></td>
-      <td><%= hero.assist.try(:name) %></td>
-      <td><%= hero.special.try(:name) %></td>
-      <td><%= hero.a_passive.try(:name) %></td>
-      <td><%= hero.b_passive.try(:name) %></td>
-      <td><%= hero.c_passive.try(:name) %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container">
+  <div class="mdl-cell mdl-cell--12-col">
+    <div class="page__heading flex__items--center">
+      <div class="page__heading-icon">
+        <i class="material-icons md-48 text--brightred">dashboard</i>
+      </div>
+      <div class="page__heading-text">
+        <h3 class="page__heading-title">Heroes</h3>
+      </div>
+      <div class="page__heading-actions">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--4-col-phone">
+    <div class="mdl-card mdl-card--2dp block--full mdl-shadow--2dp">
+
+      <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+        <thead>
+          <tr>
+            <th class="mdl-data-table__cell--non-numeric"></th>
+            <th class="mdl-data-table__cell--non-numeric">Name</th>
+            <th class="mdl-data-table__cell--non-numeric">Class</th>
+            <th class="mdl-data-table__cell--non-numeric">Movement</th>
+            <th class="mdl-data-table__cell--non-numeric">Weapon</th>
+            <th class="mdl-data-table__cell--non-numeric">Assist</th>
+            <th class="mdl-data-table__cell--non-numeric">Special</th>
+            <th class="mdl-data-table__cell--non-numeric">Passive (A)</th>
+            <th class="mdl-data-table__cell--non-numeric">Passive (B)</th>
+            <th class="mdl-data-table__cell--non-numeric">Passive (C)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @heroes.each do |hero| %>
+          <tr>
+            <td class="mdl-data-table__cell--non-numeric"><%= image_tag hero.image.url %></td>
+            <td class="mdl-data-table__cell--non-numeric"><%= hero.name %></td>
+            <td class="mdl-data-table__cell--non-numeric"><%= hero.color.name %> <%= hero.weapon_type.name %></td>
+            <td class="mdl-data-table__cell--non-numeric"><%= hero.movement_type.name %></td>
+            <td class="mdl-data-table__cell--non-numeric"><%= hero.weapon.try(:name) %></td>
+            <td class="mdl-data-table__cell--non-numeric"><%= hero.assist.try(:name) %></td>
+            <td class="mdl-data-table__cell--non-numeric"><%= hero.special.try(:name) %></td>
+            <td class="mdl-data-table__cell--non-numeric"><%= hero.a_passive.try(:name) %></td>
+            <td class="mdl-data-table__cell--non-numeric"><%= hero.b_passive.try(:name) %></td>
+            <td class="mdl-data-table__cell--non-numeric"><%= hero.c_passive.try(:name) %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

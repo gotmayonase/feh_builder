@@ -4,11 +4,22 @@
     <title>FehBuilder</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/icon?family=Material+Icons" %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="mdl-layout mdl-js-layout">
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <div class="mdl-layout__content">
+            <div class="page-content">
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
   </body>
 </html>
