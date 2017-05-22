@@ -8,7 +8,6 @@ end
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'material_design_lite-rails', '~> 1.3'
-gem 'paperclip', '~> 5.0.0'
 gem 'pg', '~> 0.20.0'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.1'
