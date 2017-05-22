@@ -26,3 +26,8 @@ MovementType.create(name: 'Flying')
 MovementType.create(name: 'Armored')
 
 Importers::HeroImporter.new.import
+Importers::WeaponImporter.new.import
+Importers::AssistImporter.new.import
+Importers::SpecialImporter.new.import
+Importers::PassiveImporter.new.import
+Importers::HeroSkillsImporter.new.import

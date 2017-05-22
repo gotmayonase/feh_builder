@@ -1,0 +1,32 @@
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Class</th>
+      <th>Movement</th>
+      <th>Weapon</th>
+      <th>Assist</th>
+      <th>Special</th>
+      <th>Passive (A)</th>
+      <th>Passive (B)</th>
+      <th>Passive (C)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @heroes.each do |hero| %>
+    <tr>
+      <td><%= image_tag hero.image.url %></td>
+      <td><%= hero.name %></td>
+      <td><%= hero.color.name %> <%= hero.weapon_type.name %></td>
+      <td><%= hero.movement_type.name %></td>
+      <td><%= hero.weapon.try(:name) %></td>
+      <td><%= hero.assist.try(:name) %></td>
+      <td><%= hero.special.try(:name) %></td>
+      <td><%= hero.a_passive.try(:name) %></td>
+      <td><%= hero.b_passive.try(:name) %></td>
+      <td><%= hero.c_passive.try(:name) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -4,6 +4,7 @@ class Hero < ApplicationRecord
   belongs_to :color
   belongs_to :weapon, optional: true
   belongs_to :assist, optional: true
+  belongs_to :special, optional: true
   belongs_to :a_passive, class_name: 'Passive', optional: true
   belongs_to :b_passive, class_name: 'Passive', optional: true
   belongs_to :c_passive, class_name: 'Passive', optional: true

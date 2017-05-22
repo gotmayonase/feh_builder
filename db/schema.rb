@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170521222230) do
+ActiveRecord::Schema.define(version: 20170521235257) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,10 @@ ActiveRecord::Schema.define(version: 20170521222230) do
     t.string "inherit_restriction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "specials", force: :cascade do |t|
@@ -93,6 +97,10 @@ ActiveRecord::Schema.define(version: 20170521222230) do
     t.boolean "exclusive"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "weapon_type_id"
+    t.bigint "color_id"
+    t.index ["color_id"], name: "index_weapons_on_color_id"
+    t.index ["weapon_type_id"], name: "index_weapons_on_weapon_type_id"
   end
 
   add_foreign_key "heroes", "assists"
@@ -101,4 +109,6 @@ ActiveRecord::Schema.define(version: 20170521222230) do
   add_foreign_key "heroes", "specials"
   add_foreign_key "heroes", "weapon_types"
   add_foreign_key "heroes", "weapons"
+  add_foreign_key "weapons", "colors"
+  add_foreign_key "weapons", "weapon_types"
 end
