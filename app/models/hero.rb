@@ -12,6 +12,8 @@ class Hero < ApplicationRecord
   has_attached_file :image
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
+  attr_accessor :match_score
+
   def to_param
     name
   end

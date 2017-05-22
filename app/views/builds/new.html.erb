@@ -24,29 +24,29 @@
 
       <%= simple_form_for [@hero, @build] do |f| %>
         <div class="mdl-grid block--full u-padding--20">
-
+          <%= f.input :hero_id, as: :hidden %>
           <div class="mdl-cell mdl-cell--12-col">
-            <%= f.input :weapon, as: :select, collection: Weapon.assigned.order(:name) %>
+            <%= f.input :weapon_id, as: :select, collection: Weapon.assigned.order(:name) %>
           </div>
 
           <div class="mdl-cell mdl-cell--12-col">
-            <%= f.input :assist, as: :select, collection: Assist.assigned.order(:name) %>
+            <%= f.input :assist_id, as: :select, collection: Assist.assigned.order(:name) %>
           </div>
 
           <div class="mdl-cell mdl-cell--12-col">
-            <%= f.input :special, as: :select, collection: Special.assigned.order(:name) %>
+            <%= f.input :special_id, as: :select, collection: Special.assigned.order(:name) %>
           </div>
 
           <div class="mdl-cell mdl-cell--12-col">
-            <%= f.input :a_passive, as: :select, collection: APassive.assigned.order(:name) %>
+            <%= f.input :a_passive_id, as: :select, collection: APassive.assigned.order(:name) %>
           </div>
 
           <div class="mdl-cell mdl-cell--12-col">
-            <%= f.input :b_passive, as: :select, collection: BPassive.assigned.order(:name) %>
+            <%= f.input :b_passive_id, as: :select, collection: BPassive.assigned.order(:name) %>
           </div>
 
           <div class="mdl-cell mdl-cell--12-col">
-            <%= f.input :c_passive, as: :select, collection: CPassive.assigned.order(:name) %>
+            <%= f.input :c_passive_id, as: :select, collection: CPassive.assigned.order(:name) %>
           </div>
 
           <div class="mdl-card__actions mdl-card--border mdl-card__actions--right">
