@@ -34,8 +34,8 @@
           <tr>
             <td class="mdl-data-table__cell--non-numeric"><%= image_tag "heroes/#{hero.name}.png" %></td>
             <td class="mdl-data-table__cell--non-numeric"><%= hero.name %></td>
-            <td class="mdl-data-table__cell--non-numeric"><%= image_tag("Icon_Class_#{hero.color.name}_#{hero.weapon_type.name}", width: 40, height: 40) %></td>
-            <td class="mdl-data-table__cell--non-numeric"><%= image_tag("Icon_Move_#{hero.movement_type.name}", width: 40, height: 40) %></td>
+            <td class="mdl-data-table__cell--non-numeric"><%= image_tag("Icon_Class_#{hero.color.name}_#{hero.weapon_type.name}.png", width: 40, height: 40) %></td>
+            <td class="mdl-data-table__cell--non-numeric"><%= image_tag("Icon_Move_#{hero.movement_type.name}.png", width: 40, height: 40) %></td>
             <td class="mdl-data-table__cell--non-numeric"><%= hero.weapon.try(:name) if should_display_field?(@build, :weapon, hero) %></td>
             <td class="mdl-data-table__cell--non-numeric"><%= hero.assist.try(:name) if should_display_field?(@build, :assist, hero) %></td>
             <td class="mdl-data-table__cell--non-numeric"><%= hero.special.try(:name) if should_display_field?(@build, :special, hero) %></td>
