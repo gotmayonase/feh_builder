@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170521235257) do
+ActiveRecord::Schema.define(version: 20170522011709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20170521235257) do
     t.string "inherit_restriction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "heroes_count"
   end
 
   create_table "colors", force: :cascade do |t|
@@ -72,6 +73,7 @@ ActiveRecord::Schema.define(version: 20170521235257) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
+    t.integer "heroes_count"
   end
 
   create_table "specials", force: :cascade do |t|
@@ -82,6 +84,7 @@ ActiveRecord::Schema.define(version: 20170521235257) do
     t.string "inherit_restriction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "heroes_count"
   end
 
   create_table "weapon_types", force: :cascade do |t|
@@ -99,6 +102,7 @@ ActiveRecord::Schema.define(version: 20170521235257) do
     t.datetime "updated_at", null: false
     t.bigint "weapon_type_id"
     t.bigint "color_id"
+    t.integer "heroes_count"
     t.index ["color_id"], name: "index_weapons_on_color_id"
     t.index ["weapon_type_id"], name: "index_weapons_on_weapon_type_id"
   end

@@ -15,7 +15,7 @@ module Importers
         puts "Importing #{rows.count} #{slot} Passives"
         rows.each do |row|
           passive = Passive.find_or_initialize_by(name: name(row))
-          passive.slot = slot
+          passive.slot = slot + 'Passive'
           passive.effect = effect(row)
           passive.sp_cost = sp_cost(row)
           passive.inherit_restriction = restriction(row)

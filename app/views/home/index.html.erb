@@ -22,14 +22,15 @@
           <tr>
             <th class="mdl-data-table__cell--non-numeric"></th>
             <th class="mdl-data-table__cell--non-numeric">Name</th>
-            <th class="mdl-data-table__cell--non-numeric">Class</th>
-            <th class="mdl-data-table__cell--non-numeric">Movement</th>
+            <th class="mdl-data-table__cell--non-numeric"></th>
+            <th class="mdl-data-table__cell--non-numeric"></th>
             <th class="mdl-data-table__cell--non-numeric">Weapon</th>
             <th class="mdl-data-table__cell--non-numeric">Assist</th>
             <th class="mdl-data-table__cell--non-numeric">Special</th>
             <th class="mdl-data-table__cell--non-numeric">Passive (A)</th>
             <th class="mdl-data-table__cell--non-numeric">Passive (B)</th>
             <th class="mdl-data-table__cell--non-numeric">Passive (C)</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -45,6 +46,13 @@
             <td class="mdl-data-table__cell--non-numeric"><%= hero.a_passive.try(:name) %></td>
             <td class="mdl-data-table__cell--non-numeric"><%= hero.b_passive.try(:name) %></td>
             <td class="mdl-data-table__cell--non-numeric"><%= hero.c_passive.try(:name) %></td>
+            <td class="mdl-data-table__cell--non-numeric">
+              <%= link_to(new_hero_build_path(hero)) do %>
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent">
+                  <i class="material-icons material-icons--in-button md-18">build</i>
+                </button>
+              <% end %>
+            </td>
           </tr>
           <% end %>
         </tbody>

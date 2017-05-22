@@ -17,6 +17,7 @@ module Importers
         hero.movement_type = MovementType.find_by(name: movement_type(row))
         hero.color = Color.find_by(name: color(row))
         hero.image = open(image_url(row)) unless hero.image.exists?
+        hero.title = title(row)
         if hero.save
           print '.'
         else
