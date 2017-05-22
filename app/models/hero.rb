@@ -9,9 +9,6 @@ class Hero < ApplicationRecord
   belongs_to :b_passive, optional: true, counter_cache: true, inverse_of: :heroes
   belongs_to :c_passive, optional: true, counter_cache: true, inverse_of: :heroes
 
-  has_attached_file :image
-  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
-
   scope :with_includes, -> {
     includes(:weapon_type,
       :movement_type,

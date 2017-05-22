@@ -19,7 +19,14 @@ module Importers
           passive.effect = effect(row)
           passive.sp_cost = sp_cost(row)
           passive.inherit_restriction = restriction(row)
-          passive.image = open(image_url(row)) unless passive.image.exists?
+          image_path = File.join(Rails.root, 'app', 'assets', 'images', 'passives', "#{passive.name}.png")
+          unless File.exists?(image_path)
+            open(image_url(row)) do |f|
+              File.open(image_path, 'wb') do |file|
+                file.puts f.read
+              end
+            end
+          end
           if passive.save
             print '.'
           else

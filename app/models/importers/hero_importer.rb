@@ -16,7 +16,14 @@ module Importers
         hero.weapon_type = WeaponType.find_by(name: weapon_type(row))
         hero.movement_type = MovementType.find_by(name: movement_type(row))
         hero.color = Color.find_by(name: color(row))
-        hero.image = open(image_url(row)) unless hero.image.exists?
+        image_path = File.join(Rails.root, 'app', 'assets', 'images', 'heroes', "#{hero.name}.png")
+        unless File.exists?(image_path)
+          open(image_url(row)) do |f|
+            File.open(image_path, 'wb') do |file|
+              file.puts f.read
+            end
+          end
+        end
         hero.title = title(row)
         if hero.save
           print '.'
