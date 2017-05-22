@@ -17,10 +17,10 @@
  @import "material";
 
 // Color Variables
-$ams-brightred: #e21e26;
-$ams-purple: #3f51b5;
-$ams-green: #009688;
-$ams-gray: #555;
+$feh-brightred: #e21e26;
+$feh-purple: #3f51b5;
+$feh-green: #009688;
+$feh-gray: #555;
 $white: #fff;
 
 * { box-sizing: border-box; }
@@ -30,12 +30,12 @@ html, body {
  font-size: 13px!important;
 }
 
-a { color: $ams-gray; }
+a { color: $feh-gray; }
 
-$ams-darkergray: darken($ams-gray, 10%);
-$ams-darkgray: darken($ams-gray, 2%);
-$ams-lightgray: lighten($ams-gray, 30%);
-$ams-lightestgray: lighten($ams-gray, 55%);
+$feh-darkergray: darken($feh-gray, 10%);
+$feh-darkgray: darken($feh-gray, 2%);
+$feh-lightgray: lighten($feh-gray, 30%);
+$feh-lightestgray: lighten($feh-gray, 55%);
 
 .page-content, .mdl-layout__content { height: 100% }
 
