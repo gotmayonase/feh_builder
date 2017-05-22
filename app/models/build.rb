@@ -27,29 +27,46 @@ class Build
     )
   end
 
-  %i{weapon assist special a_passive b_passive c_passive hero}.each do |f|
+  %i{weapon assist special a_passive b_passive c_passive}.each do |f|
     define_method f do
       f.to_s.classify.constantize.find(self.send("#{f}_id"))
     end
   end
 
+  def hero
+    @hero ||= Hero.find(self.hero_id)
+  end
+
   def ranked_heroes
-    heroes = []
-    %w{weapon_id assist_id special_id a_passive_id b_passive_id c_passive_id}.each do |field|
-      unless (value = self.send(field)).blank?
-        next if self.hero.send(field) == value.to_i
-        matching = Hero.where("#{field} = ?", value)
-        matching.each do |match|
-          if i = heroes.index(match)
-            heroes[i].match_score += 1
-          else
-            match.match_score = 1
-            heroes << match
-          end
-        end
-      end
+    ids = matching_hero_ids
+    heroes = Hero.where(id: ids).with_includes
+    heroes.each do |hero|
+      hero.match_score = ids.count(hero.id)
     end
     heroes.sort_by(&:match_score).reverse
   end
+
+  private
+
+    def matching_hero_ids
+      Hero.find_by_sql(full_query).map(&:id)
+    end
+
+    def sql_query_for_field(field, value)
+      <<-SQL
+      SELECT id
+      FROM heroes
+      WHERE #{field} = #{Hero.connection.quote(value)} AND id <> #{Hero.connection.quote(self.hero_id)}
+      SQL
+    end
+
+    def full_query
+      %i{weapon assist special a_passive b_passive c_passive}.map do |f|
+        field = "#{f}_id"
+        value = self.send(field)
+        next if self.hero.send(field) == value.to_i || value.blank?
+        sql_query_for_field(field, value)
+      end.compact.join("\nUNION ALL\n")
+    end
 
 end

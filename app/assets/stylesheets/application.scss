@@ -37,10 +37,14 @@ $feh-darkgray: darken($feh-gray, 2%);
 $feh-lightgray: lighten($feh-gray, 30%);
 $feh-lightestgray: lighten($feh-gray, 55%);
 
-.page-content, .mdl-layout__content { height: 100%; text-align: center; }
+.page-content, .mdl-layout__content { margin-top: 20px; text-align: center; }
 
 .table__container--responsive {
   overflow: scroll;
+}
+
+.mdl-data-table {
+  white-space: normal;
 }
 
 .mdl-data-table thead,
